@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Badge,
   Box,
   Button,
   Drawer,
@@ -29,8 +30,6 @@ import axios from "axios";
 import Chatloading from "../Chatloading";
 import UserListItem from "../userAvatar/UserListItem";
 import { getSender } from "../../config/chatLogics";
-import { Effect } from "react-notification-badge";
-import NotificationBadge from "react-notification-badge/lib/components/NotificationBadge";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -143,10 +142,7 @@ const SideDrawer = () => {
         <div>
           <Menu>
             <MenuButton p={1}>
-              <NotificationBadge
-                count={notifications.length}
-                effect={Effect.SCALE}
-              />
+              <Badge colorScheme={"red"}> {notifications.length}</Badge>
               <BellIcon fontSize="2xl" />
             </MenuButton>
             <MenuList pl={2}>
